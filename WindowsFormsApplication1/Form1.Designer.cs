@@ -76,25 +76,6 @@
             this.skinTabControl4 = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPage19 = new CCWin.SkinControl.SkinTabPage();
             this.skinGroupBox30 = new CCWin.SkinControl.SkinGroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBox100 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox99 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox97 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox98 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label272 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label270 = new System.Windows.Forms.Label();
-            this.label271 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.skinTabPage10 = new CCWin.SkinControl.SkinTabPage();
             this.label291 = new System.Windows.Forms.Label();
             this.label290 = new System.Windows.Forms.Label();
@@ -368,7 +349,6 @@
             this.skinTabPage2.SuspendLayout();
             this.skinTabControl4.SuspendLayout();
             this.skinTabPage19.SuspendLayout();
-            this.skinGroupBox30.SuspendLayout();
             this.skinTabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             this.skinTabPage6.SuspendLayout();
@@ -467,7 +447,7 @@
             this.新建ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.新建ToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
-            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.新建ToolStripMenuItem.Text = "新建";
             this.新建ToolStripMenuItem.Click += new System.EventHandler(this.新建ToolStripMenuItem_Click);
             // 
@@ -477,13 +457,13 @@
             this.数据ToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
             this.toolStripMenuItem2.Text = "打开";
             // 
             // 数据ToolStripMenuItem
             // 
             this.数据ToolStripMenuItem.Name = "数据ToolStripMenuItem";
-            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.数据ToolStripMenuItem.Text = "数据";
             this.数据ToolStripMenuItem.Click += new System.EventHandler(this.数据ToolStripMenuItem_Click);
             // 
@@ -491,7 +471,7 @@
             // 
             this.保存ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.保存ToolStripMenuItem.Text = "保存";
             this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
@@ -499,7 +479,7 @@
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.toolStripMenuItem1.Text = "另存为";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -507,7 +487,7 @@
             // 
             this.退出ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -525,7 +505,7 @@
             // 
             this.联系我们ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.联系我们ToolStripMenuItem.Name = "联系我们ToolStripMenuItem";
-            this.联系我们ToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.联系我们ToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
             this.联系我们ToolStripMenuItem.Text = "联系我们";
             // 
             // label123
@@ -631,7 +611,7 @@
             this.skinTabControl2.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageHover")));
             this.skinTabControl2.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControl2.PageNorml = null;
-            this.skinTabControl2.SelectedIndex = 2;
+            this.skinTabControl2.SelectedIndex = 1;
             this.skinTabControl2.Size = new System.Drawing.Size(885, 332);
             this.skinTabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl2.TabIndex = 87;
@@ -684,6 +664,7 @@
             this.button78.TabIndex = 57;
             this.button78.Text = "确定";
             this.button78.UseVisualStyleBackColor = true;
+            this.button78.Click += new System.EventHandler(this.button78_Click);
             // 
             // groupBox3
             // 
@@ -887,25 +868,6 @@
             // 
             this.skinGroupBox30.BackColor = System.Drawing.Color.White;
             this.skinGroupBox30.BorderColor = System.Drawing.Color.Black;
-            this.skinGroupBox30.Controls.Add(this.label33);
-            this.skinGroupBox30.Controls.Add(this.textBox100);
-            this.skinGroupBox30.Controls.Add(this.label9);
-            this.skinGroupBox30.Controls.Add(this.label20);
-            this.skinGroupBox30.Controls.Add(this.label21);
-            this.skinGroupBox30.Controls.Add(this.textBox28);
-            this.skinGroupBox30.Controls.Add(this.textBox99);
-            this.skinGroupBox30.Controls.Add(this.label16);
-            this.skinGroupBox30.Controls.Add(this.label17);
-            this.skinGroupBox30.Controls.Add(this.textBox97);
-            this.skinGroupBox30.Controls.Add(this.label18);
-            this.skinGroupBox30.Controls.Add(this.textBox98);
-            this.skinGroupBox30.Controls.Add(this.label15);
-            this.skinGroupBox30.Controls.Add(this.label272);
-            this.skinGroupBox30.Controls.Add(this.textBox3);
-            this.skinGroupBox30.Controls.Add(this.textBox4);
-            this.skinGroupBox30.Controls.Add(this.label270);
-            this.skinGroupBox30.Controls.Add(this.label271);
-            this.skinGroupBox30.Controls.Add(this.textBox1);
             this.skinGroupBox30.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinGroupBox30.ForeColor = System.Drawing.Color.Black;
             this.skinGroupBox30.Location = new System.Drawing.Point(10, 17);
@@ -918,194 +880,6 @@
             this.skinGroupBox30.TitleBorderColor = System.Drawing.Color.White;
             this.skinGroupBox30.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBox30.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("宋体", 12F);
-            this.label33.Location = new System.Drawing.Point(402, 43);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(56, 16);
-            this.label33.TabIndex = 167;
-            this.label33.Text = "编码：";
-            // 
-            // textBox100
-            // 
-            this.textBox100.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox100.Location = new System.Drawing.Point(455, 40);
-            this.textBox100.Name = "textBox100";
-            this.textBox100.Size = new System.Drawing.Size(252, 26);
-            this.textBox100.TabIndex = 166;
-            this.textBox100.Text = "CX01#";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 12F);
-            this.label9.Location = new System.Drawing.Point(6, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 16);
-            this.label9.TabIndex = 165;
-            this.label9.Text = "Barcode";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("宋体", 12F);
-            this.label20.Location = new System.Drawing.Point(6, 140);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 16);
-            this.label20.TabIndex = 163;
-            this.label20.Text = "账号：";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("宋体", 12F);
-            this.label21.Location = new System.Drawing.Point(208, 140);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(56, 16);
-            this.label21.TabIndex = 164;
-            this.label21.Text = "密码：";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Enabled = false;
-            this.textBox28.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox28.Location = new System.Drawing.Point(63, 139);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(80, 26);
-            this.textBox28.TabIndex = 161;
-            this.textBox28.Text = "test";
-            // 
-            // textBox99
-            // 
-            this.textBox99.Enabled = false;
-            this.textBox99.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox99.Location = new System.Drawing.Point(265, 139);
-            this.textBox99.Name = "textBox99";
-            this.textBox99.Size = new System.Drawing.Size(80, 26);
-            this.textBox99.TabIndex = 162;
-            this.textBox99.Text = "test";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("宋体", 12F);
-            this.label16.Location = new System.Drawing.Point(7, 66);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 16);
-            this.label16.TabIndex = 160;
-            this.label16.Text = "服务器";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("宋体", 12F);
-            this.label17.Location = new System.Drawing.Point(7, 89);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(56, 16);
-            this.label17.TabIndex = 156;
-            this.label17.Text = "账号：";
-            // 
-            // textBox97
-            // 
-            this.textBox97.Enabled = false;
-            this.textBox97.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox97.Location = new System.Drawing.Point(63, 86);
-            this.textBox97.Name = "textBox97";
-            this.textBox97.Size = new System.Drawing.Size(80, 26);
-            this.textBox97.TabIndex = 157;
-            this.textBox97.Text = "test1";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("宋体", 12F);
-            this.label18.Location = new System.Drawing.Point(209, 89);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 16);
-            this.label18.TabIndex = 158;
-            this.label18.Text = "密码：";
-            // 
-            // textBox98
-            // 
-            this.textBox98.Enabled = false;
-            this.textBox98.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox98.Location = new System.Drawing.Point(265, 86);
-            this.textBox98.Name = "textBox98";
-            this.textBox98.Size = new System.Drawing.Size(80, 26);
-            this.textBox98.TabIndex = 159;
-            this.textBox98.Text = "test1";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("宋体", 12F);
-            this.label15.Location = new System.Drawing.Point(7, 17);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 16);
-            this.label15.TabIndex = 155;
-            this.label15.Text = "稼动率";
-            // 
-            // label272
-            // 
-            this.label272.AutoSize = true;
-            this.label272.Font = new System.Drawing.Font("宋体", 12F);
-            this.label272.Location = new System.Drawing.Point(7, 40);
-            this.label272.Name = "label272";
-            this.label272.Size = new System.Drawing.Size(56, 16);
-            this.label272.TabIndex = 149;
-            this.label272.Text = "账号：";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox3.Location = new System.Drawing.Point(455, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(252, 26);
-            this.textBox3.TabIndex = 154;
-            this.textBox3.Text = "CX01#";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox4.Location = new System.Drawing.Point(63, 37);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(80, 26);
-            this.textBox4.TabIndex = 150;
-            this.textBox4.Text = "F0716614";
-            // 
-            // label270
-            // 
-            this.label270.AutoSize = true;
-            this.label270.Font = new System.Drawing.Font("宋体", 12F);
-            this.label270.Location = new System.Drawing.Point(402, 89);
-            this.label270.Name = "label270";
-            this.label270.Size = new System.Drawing.Size(56, 16);
-            this.label270.TabIndex = 153;
-            this.label270.Text = "编号：";
-            // 
-            // label271
-            // 
-            this.label271.AutoSize = true;
-            this.label271.Font = new System.Drawing.Font("宋体", 12F);
-            this.label271.Location = new System.Drawing.Point(209, 40);
-            this.label271.Name = "label271";
-            this.label271.Size = new System.Drawing.Size(56, 16);
-            this.label271.TabIndex = 151;
-            this.label271.Text = "密码：";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox1.Location = new System.Drawing.Point(265, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 26);
-            this.textBox1.TabIndex = 152;
-            this.textBox1.Text = "6614";
             // 
             // skinTabPage10
             // 
@@ -4302,8 +4076,6 @@
             this.skinTabPage2.ResumeLayout(false);
             this.skinTabControl4.ResumeLayout(false);
             this.skinTabPage19.ResumeLayout(false);
-            this.skinGroupBox30.ResumeLayout(false);
-            this.skinGroupBox30.PerformLayout();
             this.skinTabPage10.ResumeLayout(false);
             this.skinTabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
@@ -4393,18 +4165,6 @@
         private CCWin.SkinControl.SkinTabControl skinTabControl4;
         private CCWin.SkinControl.SkinTabPage skinTabPage19;
         private CCWin.SkinControl.SkinGroupBox skinGroupBox30;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox97;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox98;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label272;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label270;
-        private System.Windows.Forms.Label label271;
-        private System.Windows.Forms.TextBox textBox1;
         private CCWin.SkinControl.SkinTabPage skinTabPage10;
         private System.Windows.Forms.Label label291;
         private System.Windows.Forms.Label label290;
@@ -4650,11 +4410,6 @@
         private System.Windows.Forms.TextBox textBox76;
         private System.Windows.Forms.Label label353;
         private CCWin.SkinControl.SkinGroupBox skinGroupBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox99;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
@@ -4669,8 +4424,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox100;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label36;

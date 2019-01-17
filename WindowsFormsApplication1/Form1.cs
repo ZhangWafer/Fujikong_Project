@@ -891,7 +891,14 @@ namespace WindowsFormsApplication1
         string super;//超级
         string Password;//提取数据密码
         string ServerImfor;//服务器信息
-       
+        private string JDLaccount = Properties.Settings.Default.JDLaccount;//稼动率账号
+        private string JDLpwd = Properties.Settings.Default.JDLpwd;//稼动率密码
+        private string machineidentifier = Properties.Settings.Default.identifier;//机台编号
+        private string serverAccount = Properties.Settings.Default.serverAccount;//服务器账号
+        private string serverPwd = Properties.Settings.Default.serverPwd;//服务器密码
+        private string barcodeAccount = Properties.Settings.Default.BarcodeAccount;//Barcode账号
+        private string barcodePwd = Properties.Settings.Default.Barcodepwd;//Barcode密码
+
         private void getConfigMsg()
         {
             string[] msgS = new string[500];
@@ -921,15 +928,15 @@ namespace WindowsFormsApplication1
             czy = pwd_spilt[2];
 
             string[] s1 = Regex.Split(ServerImfor, ",", RegexOptions.IgnoreCase);//分割读取数组数值
-            textBox4.Text = s1[0];//服务器账户
-            textBox1.Text = s1[1];//服务器 密码
-            textBox3.Text = s1[2];//机台编号
-            textBox100.Text = s1[3];//
+            string tempJdl = s1[0];//待删除 稼动率账号
+
+           
+            
 
            
             string[] s3 = Regex.Split(alertDate, ",", RegexOptions.IgnoreCase);//服务器
-            textBox97.Text = s3[0];//
-            textBox98.Text = s3[1];//
+           
+          
             try
             {
                 
@@ -956,14 +963,8 @@ namespace WindowsFormsApplication1
              }
             catch
             { }
-            try
-            {
-                string[] s6 = Regex.Split(smsj, ",", RegexOptions.IgnoreCase);//加模具调机
-                textBox28.Text = s6[0];//
-                textBox99.Text = s6[1];//
-            }
-            catch
-            { }
+    
+
             if (Directory.Exists(@"D:\Data"))//判断是否有这个文件夹--D:\数据备份\
             {
 
@@ -1443,9 +1444,9 @@ namespace WindowsFormsApplication1
                 label297.Enabled = true;//作业员
                 label301.Enabled = true;//磨具
                 label302.Enabled = true;//审核人
-                textBox4.Enabled = true;   //稼动率账号密码
-                textBox1.Enabled = true;
-                textBox3.Enabled = true;
+              
+             
+              
             
                 textBox8.Text = "******";
 
@@ -1477,9 +1478,9 @@ namespace WindowsFormsApplication1
                 label302.Enabled = false;//审核人
 
 
-                textBox4.Enabled = false;   //稼动率账号密码
-                textBox1.Enabled = false;
-                textBox3.Enabled = false;
+               
+            
+             
             
                 textBox8.Text = "******";
             }
@@ -1498,9 +1499,9 @@ namespace WindowsFormsApplication1
                 label302.Enabled = false;//审核人
 
                 textBox82.ReadOnly = false;
-                textBox4.Enabled = false;   //稼动率账号密码
-                textBox1.Enabled = false;
-                textBox3.Enabled = false;
+               
+              
+              
                 textBox8.Text = "******";
             }
         }
@@ -1516,9 +1517,9 @@ namespace WindowsFormsApplication1
             skinGroupBox10.Text = "未登录";
      //       //PcConnectPlc.Write_Data_FxCom("M127", 0);  //密码登录
             skinTabControl2.Enabled = false;
-            textBox4.Enabled = false;   //稼动率账号密码
-            textBox1.Enabled = false;
-            textBox3.Enabled = false;
+           
+          
+         
 
         }
 
@@ -1651,7 +1652,7 @@ namespace WindowsFormsApplication1
 
                         label207.Text = DateTime.Now.ToString();//时间显示
 
-                        textBox11.Text = textBox3.Text;//机台编号
+                        textBox11.Text = machineidentifier;//机台编号
 
                         running_State();
                         try
@@ -1804,7 +1805,7 @@ namespace WindowsFormsApplication1
                             
                             string parameterName = name1;
                             string parameterValue = value1;
-                            string ret = webFun.sendDataToSer(textBox4.Text, textBox1.Text, textBox100.Text, parameterName, parameterValue,
+                            string ret = webFun.sendDataToSer(JDLaccount, JDLpwd, machineidentifier, parameterName, parameterValue,
                                                  System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                             if (ret == "OK")
                             {
@@ -1821,7 +1822,7 @@ namespace WindowsFormsApplication1
                             label344.Text = "Waiting";
                             string parameterName = name1;
                             string parameterValue = value1;
-                            string ret = webFun.sendDataToSer(textBox4.Text, textBox1.Text, textBox100.Text, parameterName, parameterValue,
+                            string ret = webFun.sendDataToSer(JDLaccount, JDLpwd, machineidentifier, parameterName, parameterValue,
                                                  System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                             if (ret == "OK")
                             {
@@ -1838,7 +1839,7 @@ namespace WindowsFormsApplication1
                             label344.Text = "Alarm";
                             string parameterName = name1;
                             string parameterValue = value1;
-                            string ret = webFun.sendDataToSer(textBox4.Text, textBox1.Text, textBox100.Text, parameterName, parameterValue,
+                            string ret = webFun.sendDataToSer(JDLaccount, JDLpwd, machineidentifier, parameterName, parameterValue,
                                                  System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                             if (ret == "OK")
                             {
@@ -1864,7 +1865,7 @@ namespace WindowsFormsApplication1
 
                         string parameterName = name1 + "|" + name2 + "|" + name3;
                         string parameterValue = value1 + "|" + value2 + "|" + value3;
-                        string ret = webFun.sendDataToSer(textBox4.Text, textBox1.Text, textBox100.Text, parameterName, parameterValue,
+                        string ret = webFun.sendDataToSer(JDLaccount, JDLpwd, machineidentifier, parameterName, parameterValue,
                                              System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
 
                         if (ret == "OK")
@@ -1888,7 +1889,7 @@ namespace WindowsFormsApplication1
                         value3 = "1";
                         string parameterName = name1 + "|" + name2 + "|" + name3;
                         string parameterValue = value1 + "|" + value2 + "|" + value3;
-                        string ret = webFun.sendDataToSer(textBox4.Text, textBox1.Text, textBox100.Text, parameterName, parameterValue,
+                        string ret = webFun.sendDataToSer(JDLaccount, JDLpwd, machineidentifier, parameterName, parameterValue,
                                              System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                         if (ret == "OK")
                         {
@@ -2558,11 +2559,11 @@ namespace WindowsFormsApplication1
 
             msgL[4] = cj + "," + gcs + "," + czy;
 
-            msgL[5] = textBox4.Text + "," + textBox1.Text + "," + textBox3.Text + "," + textBox100.Text;//稼动率服务器
+            msgL[5] = JDLaccount + "," + JDLpwd + "," + machineidentifier + "," + machineidentifier;//稼动率服务器
 
             msgL[6] = alert_date1;
 
-            msgL[7] = textBox97.Text + "," + textBox98.Text ;//数据服务器
+            msgL[7] = serverAccount + "," + serverPwd;//数据服务器
 
             if (textBox24.Text != "" && textBox21.Text != "")
             {
@@ -2573,7 +2574,7 @@ namespace WindowsFormsApplication1
             {
                 msgL[9] = textBox96.Text + "," + label5.Text + "," + textBox95.Text + "," + label6.Text;//加模具人员-调机人员
             }
-            msgL[10] = textBox28.Text + "," + textBox99.Text;//扫描头数据上传
+            msgL[10] = barcodeAccount + "," + barcodePwd;//扫描头数据上传
 
            
 
@@ -2803,8 +2804,8 @@ namespace WindowsFormsApplication1
                Barcodeweizhi=textBox68.Text + "/" + textBox65.Text;
                 }
                 string Para1 = "EQU_ID|DAY|SCAN_DATE|PARTNUM|BARCODE|LOCATE_XY|SET_NUM|REAL_NUM|IS_MIX";
-                string Para2 = textBox3.Text + "|" + System.DateTime.Now.ToString("yyyy/MM/dd") + "|" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + "|" + textBox12.Text + "|" + Barcode + "|" + Barcodeweizhi + "|" + textBox73.Text + "|" + textBox74.Text + "|" + Mixture1;
-                string ret = webFun.sendDataToSerGrp(textBox28.Text, textBox99.Text, textBox3.Text, "CX01", "CX01", Para1, Para2, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                string Para2 = machineidentifier + "|" + System.DateTime.Now.ToString("yyyy/MM/dd") + "|" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + "|" + textBox12.Text + "|" + Barcode + "|" + Barcodeweizhi + "|" + textBox73.Text + "|" + textBox74.Text + "|" + Mixture1;
+                string ret = webFun.sendDataToSerGrp(barcodeAccount, barcodePwd, machineidentifier, "CX01", "CX01", Para1, Para2, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
            
             }
             //w1.Stop();
@@ -2886,12 +2887,11 @@ namespace WindowsFormsApplication1
                 label290.Visible = true;
                 label291.Visible = true;
                 numericUpDown8.Value = 0;
-                textBox98.Enabled = true;
-                textBox97.Enabled = true;
-                textBox99.Enabled = true;
-                textBox28.Enabled = true;
-                textBox1.Enabled = true;
-                textBox4.Enabled = true;
+              
+              
+              
+                
+            
 
 
             }
@@ -2908,12 +2908,12 @@ namespace WindowsFormsApplication1
 
                 numericUpDown8.Value = 0;
 
-                textBox98.Enabled = false;
-                textBox97.Enabled = false;
-                textBox99.Enabled = false;
-                textBox28.Enabled = false;
-                textBox1.Enabled = false;
-                textBox4.Enabled = false;
+               
+               
+              
+          
+              
+              
             }
         }
 
@@ -2968,7 +2968,7 @@ namespace WindowsFormsApplication1
 
                         Lay = textBox17.Text;
                         Batch = textBox14.Text;
-                        DataSet yy = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0009", Batch + "|SFCZ1_ZD_PunchCut|" + Lay, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                        DataSet yy = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0009", Batch + "|SFCZ1_ZD_PunchCut|" + Lay, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                         textBox2.Text = Batch + Lay;
 
                         if (yy.Tables[0].Rows.Count > 0)
@@ -3146,7 +3146,7 @@ namespace WindowsFormsApplication1
 
                                             Lay = textBox17.Text;
                                             Batch = textBox14.Text;
-                                            DataSet yy = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0009", Batch + "|SFCZ1_ZD_PunchCut|" + Lay, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                            DataSet yy = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0009", Batch + "|SFCZ1_ZD_PunchCut|" + Lay, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                             textBox2.Text = Batch + Lay;
 
                                             if (yy.Tables[0].Rows.Count > 0)
@@ -3258,7 +3258,7 @@ namespace WindowsFormsApplication1
                                     mj = false;//模具
                                     try
                                     {
-                                        DataSet E = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0010", Mold, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                        DataSet E = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0010", Mold, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                         if (E.Tables[0].Rows.Count >= 0)
                                         {
                                             textBox24.Text = Mold;
@@ -3335,7 +3335,7 @@ namespace WindowsFormsApplication1
                                     textBox15.Text = sArray[1];
 
                                     Job = textBox15.Text;
-                                    machine = textBox3.Text;
+                                    machine = machineidentifier;
                                     job10 = false;
                                     List<string> msgL = new List<string>();
                                     string filePath = Application.StartupPath.ToString() + "\\job.txt";//打开根目录下的Auditor.TXT 路径
@@ -3362,7 +3362,7 @@ namespace WindowsFormsApplication1
                                                 job10 = true;
                                                 try
                                                 {
-                                                    DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                                    DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                                     if (d.Tables[0].Rows.Count >= 0)
                                                     {
                                                         string z = d.Tables[0].Rows[0][0].ToString();
@@ -3403,7 +3403,7 @@ namespace WindowsFormsApplication1
                                     {
                                         try
                                         {
-                                            DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                            DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                             if (d.Tables[0].Rows.Count >= 0)
                                             {
                                                 string z = d.Tables[0].Rows[0][0].ToString();//审核是否有权限
@@ -3492,7 +3492,7 @@ namespace WindowsFormsApplication1
                                                     Auditor10 = true;
                                                     try
                                                     {
-                                                        DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                                        DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                                         if (d.Tables[0].Rows.Count >= 0)
                                                         {
                                                             string f = d.Tables[0].Rows[0][0].ToString();
@@ -3534,7 +3534,7 @@ namespace WindowsFormsApplication1
                                         {
                                             try
                                             {
-                                                DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                                DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                                 if (d.Tables[0].Rows.Count >= 0)
                                                 {
                                                     string f = d.Tables[0].Rows[0][0].ToString();//审核是否有权限
@@ -3796,7 +3796,7 @@ namespace WindowsFormsApplication1
                 //    textBox23.Text = y3;
                 //    textBox19.Text = "0";
                 //}
-                DataSet yy = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0004", "G0001", "SFCZ1_ZD_PunchCut|" + System.DateTime.Now.ToString("yyyyMMdd") + "|"+textBox11.Text+"|" + a, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                DataSet yy = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0004", "G0001", "SFCZ1_ZD_PunchCut|" + System.DateTime.Now.ToString("yyyyMMdd") + "|" + textBox11.Text + "|" + a, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                 //读取表单号,---第一步
                 if (yy.Tables[0].Rows.Count > 0)//如果有表单号，直接提取，没有就创建。
                 {
@@ -3807,17 +3807,17 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    DataSet ww = webFun.getDataFromSer(textBox97.Text, textBox98.Text,"#01","0004","0002",System.DateTime.Now.ToString("yyyyMMdd")+"|"+a,System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    DataSet ww = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0004", "0002", System.DateTime.Now.ToString("yyyyMMdd") + "|" + a, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                     //2018081200950--第二步
                     string ee = ww.Tables[0].Rows[0][0].ToString();//单号
                     textBox23.Text = ee;
 
-                    string ret1 = webFun.sendDataToSerGrp(textBox97.Text, textBox98.Text,"#01","0004","0003","paperNo|Status|DoDate|MachineNo|Report|ClassInfo|Factory|CreateTime|CreateEmpid",
+                    string ret1 = webFun.sendDataToSerGrp(serverAccount, serverPwd, "#01", "0004", "0003", "paperNo|Status|DoDate|MachineNo|Report|ClassInfo|Factory|CreateTime|CreateEmpid",
                    textBox23.Text + "|1|" + System.DateTime.Now.ToString("yyyyMMdd") + "|" + textBox11.Text + "|SFCZ1_ZD_PunchCut|"+a+"|001|" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + "|" + textBox15.Text ,
                       System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));//第三步
 
                 }
-                DataSet y1 = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0002", textBox14.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                DataSet y1 = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0002", textBox14.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                 // 第四步
 
                 if (y1.Tables[0].Rows.Count > 0)//
@@ -3828,7 +3828,7 @@ namespace WindowsFormsApplication1
                     string y21 = y1.Tables[0].Rows[0][2].ToString();//
                 }
 
-                DataSet y4 = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0009", textBox14.Text + "|SFCZ1_ZD_PunchCut|" + textBox17.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                DataSet y4 = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0009", textBox14.Text + "|SFCZ1_ZD_PunchCut|" + textBox17.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                 //                 //   第五步
                 if (y4.Tables[0].Rows.Count > 0)//
                 {
@@ -3858,7 +3858,7 @@ namespace WindowsFormsApplication1
 
                 PcConnectPlc.Write_Data_FxUsb("M2903", 1);//可以运行
 
-                string ret = webFun.sendDataToSerGrp(textBox97.Text, textBox98.Text, "#01", "0004", "0006",
+                string ret = webFun.sendDataToSerGrp(serverAccount, serverPwd, "#01", "0004", "0006",
                     "paperNo|MacState|StartTime|EndTime|Lotnum|Layer|MainSerial|Partnum|WorkNo|SfcLayer|LayerName|Serial|IsMain|OrderId|Item2|Item1|Item3|Item4|Item5|Item6|Item7|Item8|Qty|Item10|Item11|Item13|Item14|Item15|Item16|CreateEmpid|CreateTime|ModifyEmpid|ModifyTime",
           textBox23.Text + "|正常|" + label352.Text + "|" + "" + "|"
           + textBox14.Text + "|" + textBox17.Text + "|" + textBox16.Text + "|" + textBox12.Text + "|" + textBox20.Text + "|"
@@ -3922,7 +3922,7 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        DataSet E = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0010", textBox24.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                        DataSet E = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0010", textBox24.Text, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                         if (E.Tables[0].Rows.Count > 0)
                         {
                             mj = false;//模具
@@ -4024,7 +4024,7 @@ namespace WindowsFormsApplication1
                 if (textBox15.Text.Length == 8 || textBox15.Text.Length == 7)
                 {
                     Job = textBox15.Text;
-                    machine = textBox3.Text;
+                    machine = machineidentifier;
 
                     List<string> msgL = new List<string>();
                     string filePath = Application.StartupPath.ToString() + "\\job.txt";//打开根目录下的Auditor.TXT 路径
@@ -4045,7 +4045,7 @@ namespace WindowsFormsApplication1
                             {
                                 try
                                 {
-                                    DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                    DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                     if (d.Tables[0].Rows.Count >= 0)
                                     {
                                         string z = d.Tables[0].Rows[0][0].ToString();
@@ -4089,7 +4089,7 @@ namespace WindowsFormsApplication1
                     {
                         try
                         {
-                            DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                            DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0011", Job + "|" + machine, System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                             if (d.Tables[0].Rows.Count >= 0)
                             {
                                 string z = d.Tables[0].Rows[0][0].ToString();//审核是否有权限
@@ -4161,7 +4161,7 @@ namespace WindowsFormsApplication1
                               //  Auditor10 = true;
                                 try
                                 {
-                                    DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                                    DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                                     if (d.Tables[0].Rows.Count >= 0)
                                     {
                                         string f = d.Tables[0].Rows[0][0].ToString();
@@ -4199,7 +4199,7 @@ namespace WindowsFormsApplication1
                     {
                         try
                         {
-                            DataSet d = webFun.getDataFromSer(textBox97.Text, textBox98.Text, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                            DataSet d = webFun.getDataFromSer(serverAccount, serverPwd, "#01", "0001", "0012", Auditor + "|SFCZ1_ZD_PunchCut", System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                             if (d.Tables[0].Rows.Count >= 0)
                             {
                                 string f = d.Tables[0].Rows[0][0].ToString();//审核是否有权限
@@ -4283,8 +4283,8 @@ namespace WindowsFormsApplication1
                     Run = false;
 
                  label25.Text = textBox78.Text;
-      
-                 string ret = webFun.sendDataToSerGrp(textBox97.Text, textBox98.Text, "#01", "0004", "0006",
+
+                 string ret = webFun.sendDataToSerGrp(serverAccount, serverPwd, "#01", "0004", "0006",
                "paperNo|MacState|StartTime|EndTime|Lotnum|Layer|MainSerial|Partnum|WorkNo|SfcLayer|LayerName|Serial|IsMain|OrderId|Item2|Item1|Item3|Item4|Item5|Item6|Item7|Item8|Qty|Item10|Item11|Item13|Item14|Item15|Item16|CreateEmpid|CreateTime|ModifyEmpid|ModifyTime",
      textBox23.Text + "|正常|" + label352.Text + "|" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + "|"
      + textBox14.Text + "|" + textBox17.Text + "|" + textBox16.Text + "|" + textBox12.Text + "|" + textBox20.Text + "|"
@@ -4607,6 +4607,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("BOM模具栏位空或者操作人员没有权限！");
             }
+        }
+
+        private void button78_Click(object sender, EventArgs e)
+        {
+
         }
 
 
