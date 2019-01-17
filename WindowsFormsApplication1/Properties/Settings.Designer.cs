@@ -128,5 +128,77 @@ namespace WindowsFormsApplication1.Properties {
                 this["identifier2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM4")]
+        public string PortNumber {
+            get {
+                return ((string)(this["PortNumber"]));
+            }
+            set {
+                this["PortNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public string SuperUser {
+            get {
+                return ((string)(this["SuperUser"]));
+            }
+            set {
+                this["SuperUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public string EnginerUser {
+            get {
+                return ((string)(this["EnginerUser"]));
+            }
+            set {
+                this["EnginerUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string OperaterUser {
+            get {
+                return ((string)(this["OperaterUser"]));
+            }
+            set {
+                this["OperaterUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SG14805,SG14805,FSGO054CVAC1AQDC,2.0,3399,SG14805,2s")]
+        public string LastModelImformation {
+            get {
+                return ((string)(this["LastModelImformation"]));
+            }
+            set {
+                this["LastModelImformation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(",架模时间,,调机时间")]
+        public string JMTJ {
+            get {
+                return ((string)(this["JMTJ"]));
+            }
+            set {
+                this["JMTJ"] = value;
+            }
+        }
     }
 }

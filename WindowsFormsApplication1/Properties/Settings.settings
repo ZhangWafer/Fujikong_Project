@@ -29,5 +29,23 @@
     <Setting Name="identifier2" Type="System.String" Scope="User">
       <Value Profile="(Default)">CX01#</Value>
     </Setting>
+    <Setting Name="PortNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM4</Value>
+    </Setting>
+    <Setting Name="SuperUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="EnginerUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="OperaterUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="LastModelImformation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SG14805,SG14805,FSGO054CVAC1AQDC,2.0,3399,SG14805,2s</Value>
+    </Setting>
+    <Setting Name="JMTJ" Type="System.String" Scope="User">
+      <Value Profile="(Default)">,架模时间,,调机时间</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

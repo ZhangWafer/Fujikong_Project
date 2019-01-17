@@ -33,7 +33,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -375,14 +374,12 @@
             // timer3
             // 
             this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer1
             // 
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 60000;
             // 
             // imageList1
             // 
@@ -522,7 +519,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox10.BackColor = System.Drawing.Color.Red;
             this.textBox10.Location = new System.Drawing.Point(15, 41);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
@@ -3727,7 +3724,7 @@
             // 
             // textBox75
             // 
-            this.textBox75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox75.BackColor = System.Drawing.Color.LightGray;
             this.textBox75.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox75.Location = new System.Drawing.Point(401, 251);
             this.textBox75.Multiline = true;
@@ -4033,7 +4030,7 @@
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.PageNormlTxtColor = System.Drawing.Color.Silver;
             this.skinTabControl1.PageTextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.skinTabControl1.SelectedIndex = 2;
+            this.skinTabControl1.SelectedIndex = 1;
             this.skinTabControl1.Size = new System.Drawing.Size(897, 615);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 35;
@@ -4122,7 +4119,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
