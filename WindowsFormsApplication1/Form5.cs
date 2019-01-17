@@ -24,8 +24,6 @@ namespace WindowsFormsApplication1
         {
             //textBox1.Text = PcConnectPlc.Read_Data_FxCom("D376", 2).ToString();
             //textBox2.Text = PcConnectPlc.Read_Data_FxCom("D378", 2).ToString();
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

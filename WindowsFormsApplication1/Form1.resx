@@ -137,7 +137,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACE
-        zAIAAk1TRnQBSQFMAgEBEgEAAUABGgFAARoBMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
+        zAIAAk1TRnQBSQFMAgEBEgEAAUgBGgFIARoBMAEAATABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAHA
         AwAB8AMAAQEBAAEgBgAB0AEC/wD/AP8A/wD/AP8A/wD/AP8A6gADUgGpAwAB/xAAA2EB3AMAAf8fAAH/
         AzsBZCsAAf8DAAH/AzABSxQAA1sBywMAAf8DAAH//wD/AG4AA1kBvgMAAf8DKQE/CAADYQHuAwAB/wMA
         Af8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/ywAAzgBXQMAAf8DAAH/AzQBVAQAAxgBIgMA
@@ -3493,7 +3493,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>60</value>
+    <value>103</value>
   </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

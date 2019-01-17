@@ -302,6 +302,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label288 = new System.Windows.Forms.Label();
             this.skinGroupBox23 = new CCWin.SkinControl.SkinGroupBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -356,7 +357,6 @@
             this.label304 = new System.Windows.Forms.Label();
             this.label348 = new System.Windows.Forms.Label();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
-            this.label36 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.skinGroupBox21.SuspendLayout();
             this.skinTabPage1.SuspendLayout();
@@ -467,7 +467,7 @@
             this.新建ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.新建ToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
-            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.新建ToolStripMenuItem.Text = "新建";
             this.新建ToolStripMenuItem.Click += new System.EventHandler(this.新建ToolStripMenuItem_Click);
             // 
@@ -477,13 +477,13 @@
             this.数据ToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem2.Text = "打开";
             // 
             // 数据ToolStripMenuItem
             // 
             this.数据ToolStripMenuItem.Name = "数据ToolStripMenuItem";
-            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.数据ToolStripMenuItem.Text = "数据";
             this.数据ToolStripMenuItem.Click += new System.EventHandler(this.数据ToolStripMenuItem_Click);
             // 
@@ -491,7 +491,7 @@
             // 
             this.保存ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.保存ToolStripMenuItem.Text = "保存";
             this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
@@ -499,7 +499,7 @@
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "另存为";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -507,7 +507,7 @@
             // 
             this.退出ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -525,7 +525,7 @@
             // 
             this.联系我们ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.联系我们ToolStripMenuItem.Name = "联系我们ToolStripMenuItem";
-            this.联系我们ToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.联系我们ToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.联系我们ToolStripMenuItem.Text = "联系我们";
             // 
             // label123
@@ -631,7 +631,7 @@
             this.skinTabControl2.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageHover")));
             this.skinTabControl2.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControl2.PageNorml = null;
-            this.skinTabControl2.SelectedIndex = 1;
+            this.skinTabControl2.SelectedIndex = 2;
             this.skinTabControl2.Size = new System.Drawing.Size(885, 332);
             this.skinTabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl2.TabIndex = 87;
@@ -3630,6 +3630,16 @@
             this.skinGroupBox23.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBox23.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label36.Location = new System.Drawing.Point(176, 17);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(10, 10);
+            this.label36.TabIndex = 278;
+            this.label36.Text = "0";
+            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -4249,20 +4259,10 @@
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.PageNormlTxtColor = System.Drawing.Color.Silver;
             this.skinTabControl1.PageTextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.skinTabControl1.SelectedIndex = 0;
+            this.skinTabControl1.SelectedIndex = 2;
             this.skinTabControl1.Size = new System.Drawing.Size(897, 615);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 35;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label36.Location = new System.Drawing.Point(176, 17);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(10, 10);
-            this.label36.TabIndex = 278;
-            this.label36.Text = "0";
             // 
             // Form1
             // 

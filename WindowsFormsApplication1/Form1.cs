@@ -53,8 +53,8 @@ namespace WindowsFormsApplication1
         #region  全局变量
         System.Diagnostics.Process p = new System.Diagnostics.Process();  //开启另外一个软件用的东西
         //Boolean boreadPictureModel = false;  //读取上一次打开的模板   读取成功返回true
-        string portName; //串口号
-        string port; //串口号2
+        
+       
         //string liftarm;//左臂1
         //string ringhtarm;//右臂2
         //string punching;//冲数3
@@ -70,7 +70,6 @@ namespace WindowsFormsApplication1
         //string gap8;//料盘脱针---
         //string gap9;//推高---
         //string gap10;//扫码位置---
-        string forbidden;
         string Forbidden;
         //string path1="";
         int houjia = 0;
@@ -82,13 +81,12 @@ namespace WindowsFormsApplication1
 
 
         bool shenghe = false;
-        string shuju = "";
+       
         string Barcode = "";
         string Barcodeweizhi = "";
         string scmj = "";
-        string jmtj = "";
         string Mixture1 ="0";
-        string smsj = "";
+       
         string NG = "";
         int tongxing = 0;
         int tongxingplc = 0;
@@ -104,8 +102,8 @@ namespace WindowsFormsApplication1
         string gap18;//MOLD3
         string gap19; //保养数
         //string bj;
-        string supe;//超级
-        string bjrq;//报警日期
+        
+        
         string shuliang;
         int a6;
         bool saomatouk = false;//扫码判断
@@ -136,7 +134,7 @@ namespace WindowsFormsApplication1
         public string czy; //操作员
         public string cj;   //厂家
         public string gcs;   //工程师、调机
-        string Password;//提取数据密码
+       
 
         string Batch;//批号
         string Lay;//层别
@@ -158,7 +156,7 @@ namespace WindowsFormsApplication1
         string value3;
         string value4;
 
-        string fwzh;
+       
 
         bool Run = false;//运行
 
@@ -167,7 +165,7 @@ namespace WindowsFormsApplication1
         WebApplication1.WebReference.Service1 webFun = new WebApplication1.WebReference.Service1();//连接客户服务器
 
 
-        string filePathNow = "", fileModelPath = "";  //当前型号的路径
+        string filePathNow = "";  //当前型号的路径
         Thread renewDataFromPlc;//多线程
         Thread fwqtx; //服务器通信
         string[] fileModelStr = new string[20];  //储存分析得到的 型号名称
@@ -432,8 +430,10 @@ namespace WindowsFormsApplication1
 
             //--------------------------------------------------Start
             //显示加载界面
-            Thread loading = new Thread(new ThreadStart(loadingForm4));
-            loading.Start();
+            //Thread loading = new Thread(new ThreadStart(loadingForm4));
+            //loading.Start();
+            //Form4 form4=new Form4();
+            //form4.Show();
             //--------------------------------------------------------End
 
             //--------------------------------------------------Start
@@ -476,7 +476,7 @@ namespace WindowsFormsApplication1
             this.Text = "KF系统";
             //--------------------------------------------------------End
 
-            loading.Abort();
+           // form4.Close();
             timer1.Enabled = true;  //和三菱PLC循环更新数据 
             timer4.Enabled = true;
 
@@ -886,6 +886,12 @@ namespace WindowsFormsApplication1
         #endregion
 
         #region  读取config数据
+        string alert_date1;//报警日期
+        string port; //串口号2
+        string super;//超级
+        string Password;//提取数据密码
+        string ServerImfor;//服务器信息
+       
         private void getConfigMsg()
         {
             string[] msgS = new string[500];
@@ -895,42 +901,39 @@ namespace WindowsFormsApplication1
 
             //msgS数组读取到的数据
 
-            fileModelPath = msgS[0]; //上一次型号路径
-            portName = msgS[1]; //串口号
+            string fileModelPath = msgS[0]; //上一次型号路径
+            string portName = msgS[1]; //串口号
             port = msgS[2]; //扫码串口
-            supe = msgS[3];//超级密码
+            super = msgS[3];//超级密码
             Password = msgS[4];// 用户密码
-            fwzh = msgS[5];//服务器
-            bjrq = msgS[6];//报警日期
-            shuju = msgS[7];//报警日期
-            scmj = msgS[8];//上次模具
-            jmtj = msgS[9];//架摸调机
-            smsj = msgS[10];//扫码数据服务器
+            ServerImfor = msgS[5];//服务器
+            alert_date1 = msgS[6];//报警日期
+            string alertDate = msgS[7];//报警日期
+            string lastModel = msgS[8];//上次模具
+            string jmtj = msgS[9];//架摸调机
+            string smsj = msgS[10];//扫码数据服务器
 
-            string strs = supe;
-            string[] sArrays = Regex.Split(strs, ",", RegexOptions.IgnoreCase);//分割读取数组数值
-     
-            string strs1 = Password;
-            string[] s = Regex.Split(strs1, ",", RegexOptions.IgnoreCase);//分割读取数组数值
-            cj = s[0];//用户密码
-            gcs = s[1];
-            czy = s[2];
 
-            string strs2 = fwzh;
-            string[] s1 = Regex.Split(strs2, ",", RegexOptions.IgnoreCase);//分割读取数组数值
+           // string[] sArrays = Regex.Split(supe, ",", RegexOptions.IgnoreCase);//分割读取数组数值
+            string[] pwd_spilt = Regex.Split(Password, ",", RegexOptions.IgnoreCase);//分割读取数组数值
+            cj = pwd_spilt[0];//用户密码
+            gcs = pwd_spilt[1];
+            czy = pwd_spilt[2];
+
+            string[] s1 = Regex.Split(ServerImfor, ",", RegexOptions.IgnoreCase);//分割读取数组数值
             textBox4.Text = s1[0];//服务器账户
             textBox1.Text = s1[1];//服务器 密码
             textBox3.Text = s1[2];//机台编号
             textBox100.Text = s1[3];//
 
-            string strs3 = shuju;
-            string[] s3 = Regex.Split(strs3, ",", RegexOptions.IgnoreCase);//服务器
+           
+            string[] s3 = Regex.Split(alertDate, ",", RegexOptions.IgnoreCase);//服务器
             textBox97.Text = s3[0];//
             textBox98.Text = s3[1];//
             try
             {
-                string strs4 = scmj;
-                string[] s4 = Regex.Split(strs4, ",", RegexOptions.IgnoreCase);//上次模具
+                
+                string[] s4 = Regex.Split(lastModel, ",", RegexOptions.IgnoreCase);//上次模具
                 textBox82.Text = s4[0];//
                 textBox24.Text = s4[1];//
                 textBox21.Text = s4[2];//
@@ -944,8 +947,8 @@ namespace WindowsFormsApplication1
             { }
             try
             {
-            string strs5 = jmtj;
-            string[] s5 = Regex.Split(strs5, ",", RegexOptions.IgnoreCase);//加模具调机
+           
+            string[] s5 = Regex.Split(jmtj, ",", RegexOptions.IgnoreCase);//加模具调机
             textBox96.Text = s5[0];//
             label5.Text = s5[1];//
             textBox95.Text = s5[2];//
@@ -955,8 +958,7 @@ namespace WindowsFormsApplication1
             { }
             try
             {
-                string strs6 = smsj;
-                string[] s6 = Regex.Split(strs6, ",", RegexOptions.IgnoreCase);//加模具调机
+                string[] s6 = Regex.Split(smsj, ",", RegexOptions.IgnoreCase);//加模具调机
                 textBox28.Text = s6[0];//
                 textBox99.Text = s6[1];//
             }
@@ -1428,15 +1430,14 @@ namespace WindowsFormsApplication1
 
             if ((textBox8.Text == cj) || (textBox8.Text == "890672"))
             {   //厂家
-                forbidden = "cj";
+                
                 skinTabControl1.Selecting += new TabControlCancelEventHandler(skinTabControl1_Selecting);
                 skinTabControl2.Enabled = true;  //
 
                 skinGroupBox23.Enabled = true;
-              
 
                 skinGroupBox10.Text = "厂家-已登录";
-                Forbidden = forbidden;     //记录登录状态
+                Forbidden = "cj";     //记录登录状态
            //     //PcConnectPlc.Write_Data_FxCom("M127", 1);  //密码登录
 
                 label297.Enabled = true;//作业员
@@ -1463,12 +1464,12 @@ namespace WindowsFormsApplication1
             }
             else if (textBox8.Text == czy)
             {   //操作员
-                forbidden = "czy";
+              
                 skinTabControl1.Selecting += new TabControlCancelEventHandler(skinTabControl1_Selecting);
                 skinTabControl2.Enabled = true;  //
                 skinGroupBox23.Enabled = true;
                 skinGroupBox10.Text = "操作员-已登录";
-                Forbidden = forbidden;     //记录登录状态
+                Forbidden = "czy";     //记录登录状态
          //       //PcConnectPlc.Write_Data_FxCom("M127", 1);  //密码登录
 
                 label297.Enabled = false ;//作业员
@@ -1484,12 +1485,12 @@ namespace WindowsFormsApplication1
             }
             else if (textBox8.Text == gcs)
             {   //工程师
-                forbidden = "gcs";
+                
                 skinTabControl1.Selecting += new TabControlCancelEventHandler(skinTabControl1_Selecting);
                 skinTabControl2.Enabled = true;  //
                 skinGroupBox23.Enabled = true;
                 skinGroupBox10.Text = "工程师-已登录";
-                Forbidden = forbidden;     //记录登录状态
+                Forbidden = "gcs";     //记录登录状态
          //       //PcConnectPlc.Write_Data_FxCom("M127", 1);  //密码登录
 
                 label297.Enabled = false;//作业员
@@ -1508,7 +1509,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {   //注销密码
             textBox8.Text = "******";
-            forbidden = "czy";
+            Forbidden = "czy";
             skinTabControl1.Selecting += new TabControlCancelEventHandler(skinTabControl1_Selecting);
             skinTabControl2.Enabled = false;  //
             skinGroupBox23.Enabled = false;
@@ -1600,31 +1601,7 @@ namespace WindowsFormsApplication1
                     { }
                     try 
                     {
-                        //if (Convert.ToInt32(textBox75.Text) >= 0)//张数不能为负数
-                        //{
-                        //   decimal cc1 = Convert.ToInt32(textBox75.Text) - Convert.ToInt32(label358.Text);//张数
-                        //   decimal cc2 = numericUpDown26.Value;
-                        //   a33 = cc1.ToString();
-                        //  decimal cc3;
-                        //     string[] dd= (cc1 /cc2).ToString ().Split(new char[1] { '.'});
-                        //     if (dd[1].Length > 2)
-                        //     {
-                        //         cc3 = Convert.ToDecimal(dd[0] + "." + dd[1].Substring(0, 2));
-                        //     }
-                        //     else
-                        //     {
-                        //         cc3 = Convert.ToDecimal(dd[0]);
-                        //     }
-                        //    if (label365.Visible == true)//切换
-                        //    {
-                        //        textBox78.Text = (cc3 /2).ToString();
-                        //    }
-                        //    else
-                        //    {
-                        //        textBox78.Text = cc3.ToString();
-                        //    }
-                        //    textBox81.Text = cc3.ToString();
-                        //}
+                      
                         if (Convert.ToInt32(textBox75.Text) > 0)//张数不能为负数
                         {
                             int cc = Convert.ToInt32(textBox75.Text) - Convert.ToInt32(label358.Text);//张数
@@ -2346,7 +2323,7 @@ namespace WindowsFormsApplication1
         #region 选显卡 禁用
         void skinTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {  //禁用选项卡
-            switch (forbidden)
+            switch (Forbidden)
             {
                 case "czy":
                     if (e.TabPageIndex == 1 || e.TabPageIndex == 2) { e.Cancel = true; }
@@ -2395,7 +2372,7 @@ namespace WindowsFormsApplication1
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             //密码修改
-            if (forbidden == "cj")
+            if (Forbidden == "cj")
             {
                 Thread frm5 = new Thread(new ThreadStart(frm5_Load));
                 frm5.IsBackground = true;
@@ -2583,7 +2560,7 @@ namespace WindowsFormsApplication1
 
             msgL[5] = textBox4.Text + "," + textBox1.Text + "," + textBox3.Text + "," + textBox100.Text;//稼动率服务器
 
-            msgL[6] = bjrq;
+            msgL[6] = alert_date1;
 
             msgL[7] = textBox97.Text + "," + textBox98.Text ;//数据服务器
 
